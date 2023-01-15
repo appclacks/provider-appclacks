@@ -1,0 +1,24 @@
+apiVersion: healthcheck.appclacks.upbound.io/v1alpha1
+kind: HTTP
+metadata:
+  annotations:
+    meta.upbound.io/example-id: healthcheck/v1alpha1/http
+  labels:
+    testing.upbound.io/example-name: example_healthcheck_http
+  name: example-healthcheck-http
+spec:
+  forProvider:
+    description: example http health check
+    enabled: true
+    interval: 30s
+    labels:
+      env: prod
+    method: GET
+    name: test-http
+    path: /healthz
+    port: 443
+    protocol: https
+    target: api.appclacks.com
+    timeout: 5s
+    validStatus:
+      - 200

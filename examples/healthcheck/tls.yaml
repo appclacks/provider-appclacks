@@ -1,0 +1,21 @@
+apiVersion: healthcheck.appclacks.upbound.io/v1alpha1
+kind: TLS
+metadata:
+  annotations:
+    meta.upbound.io/example-id: healthcheck/v1alpha1/tls
+  labels:
+    testing.upbound.io/example-name: example_healthcheck_tls
+  name: example-healthcheck-tls
+spec:
+  forProvider:
+    description: example tls health check
+    enabled: true
+    expirationDelay: 168h
+    interval: 30s
+    labels:
+      env: prod
+    name: test-tls
+    port: 443
+    serverName: appclacks.com
+    target: appclacks.com
+    timeout: 5s

@@ -1,0 +1,21 @@
+apiVersion: healthcheck.appclacks.upbound.io/v1alpha1
+kind: DNS
+metadata:
+  annotations:
+    meta.upbound.io/example-id: healthcheck/v1alpha1/dns
+  labels:
+    testing.upbound.io/example-name: test_dns
+  name: test-dns
+spec:
+  forProvider:
+    description: example dns health check
+    domain: appclacks.com
+    enabled: true
+    interval: 30s
+    labels:
+      env: prod
+    name: test-dns
+    timeout: 5s
+
+---
+

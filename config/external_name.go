@@ -9,8 +9,11 @@ import "github.com/upbound/upjet/pkg/config"
 // ExternalNameConfigs contains all external name configurations for this
 // provider.
 var ExternalNameConfigs = map[string]config.ExternalName{
-	// Import requires using a randomly generated ID from provider: nl-2e21sda
-	"null_resource": config.IdentifierFromProvider,
+	"appclacks_healthcheck_command": config.IdentifierFromProvider,
+	"appclacks_healthcheck_http":    config.IdentifierFromProvider,
+	"appclacks_healthcheck_tcp":     config.IdentifierFromProvider,
+	"appclacks_healthcheck_tls":     config.IdentifierFromProvider,
+	"appclacks_healthcheck_dns":     config.IdentifierFromProvider,
 }
 
 // ExternalNameConfigurations applies all external name configs listed in the

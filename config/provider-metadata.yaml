@@ -1,2 +1,212 @@
-name: hashicorp/null
-resources: {}
+name: appclacks/appclacks
+resources:
+    appclacks_healthcheck_command:
+        subCategory: ""
+        description: Execute an arbitrary shell command
+        name: appclacks_healthcheck_command
+        title: appclacks_healthcheck_command
+        examples:
+            - name: test_command
+              manifest: |-
+                {
+                  "arguments": [
+                    "/"
+                  ],
+                  "command": "ls",
+                  "description": "example command health check",
+                  "interval": "30s",
+                  "labels": {
+                    "env": "prod"
+                  },
+                  "name": "test-command",
+                  "timeout": "5s"
+                }
+        argumentDocs:
+            arguments: (Set of String) Command arguments
+            command: (String) Health check command
+            create: (String)
+            delete: (String)
+            description: (String) Health check description
+            id: (String) The ID of this resource.
+            interval: '(String) Health check interval (example: 30s)'
+            labels: (Map of String) Health check labels
+            name: (String) Health check name
+            read: (String)
+            timeout: '(String) Health check timeout (example: 5s)'
+            timeouts: (Block, Optional) (see below for nested schema)
+            update: (String)
+        importStatements:
+            - terraform import appclacks_healthcheck_command.demo b6dd6bfc-8a75-11ed-a1eb-0242ac120002
+    appclacks_healthcheck_dns:
+        subCategory: ""
+        description: Execute a DNS query and optionally verify the request answer
+        name: appclacks_healthcheck_dns
+        title: appclacks_healthcheck_dns
+        examples:
+            - name: test_dns
+              manifest: |-
+                {
+                  "description": "example dns health check",
+                  "domain": "appclacks.com",
+                  "enabled": true,
+                  "interval": "30s",
+                  "labels": {
+                    "env": "prod"
+                  },
+                  "name": "test-dns",
+                  "timeout": "5s"
+                }
+        argumentDocs:
+            create: (String)
+            delete: (String)
+            description: (String) Health check description
+            domain: (String) Domain to check
+            enabled: (Boolean) Enable the health check on the Appclacks platform
+            expected_ips: (Set of String) Expected IP addresses in the answer
+            id: (String) The ID of this resource.
+            interval: '(String) Health check interval (example: 30s)'
+            labels: (Map of String) Health check labels
+            name: (String) Health check name
+            read: (String)
+            timeout: '(String) Health check timeout (example: 5s)'
+            timeouts: (Block, Optional) (see below for nested schema)
+            update: (String)
+        importStatements:
+            - terraform import appclacks_healthcheck_dns.demo b6dd6bfc-8a75-11ed-a1eb-0242ac120002
+    appclacks_healthcheck_http:
+        subCategory: ""
+        description: Execute an HTTP request on the target
+        name: appclacks_healthcheck_http
+        title: appclacks_healthcheck_http
+        examples:
+            - name: test_http
+              manifest: |-
+                {
+                  "description": "example http health check",
+                  "enabled": true,
+                  "interval": "30s",
+                  "labels": {
+                    "env": "prod"
+                  },
+                  "method": "GET",
+                  "name": "test-http",
+                  "path": "/healthz",
+                  "port": 443,
+                  "protocol": "https",
+                  "target": "api.appclacks.com",
+                  "timeout": "5s",
+                  "valid_status": [
+                    200
+                  ]
+                }
+        argumentDocs:
+            body: (String) Health check request HTTP body
+            body_regexp: (Set of String) A list of regular expression which will be executed against the response body
+            cacert: (String) TLS cacert file to use for the TLS connection
+            cert: (String) TLS cert file to use for the TLS connection
+            create: (String)
+            delete: (String)
+            description: (String) Health check description
+            enabled: (Boolean) Enable the health check on the Appclacks platform
+            headers: (Map of String) Health check request HTTP headers
+            id: (String) The ID of this resource.
+            interval: '(String) Health check interval (example: 30s)'
+            key: (String) TLS key file to use for the TLS connection
+            labels: (Map of String) Health check labels
+            method: (String) Health check HTTP method
+            name: (String) Health check name
+            path: (String) Health check request HTTP path
+            port: (Number) Health check port
+            protocol: (String) Health check protocol to use (http or https)
+            read: (String)
+            redirect: (Boolean) Follow redirections
+            target: (String) Health check target (can be a domain or an IP address)
+            timeout: '(String) Health check timeout (example: 5s)'
+            timeouts: (Block, Optional) (see below for nested schema)
+            update: (String)
+            valid_status: (Set of Number) Expected status code(s) for the HTTP response
+        importStatements:
+            - terraform import appclacks_healthcheck_http.demo b6dd6bfc-8a75-11ed-a1eb-0242ac120002
+    appclacks_healthcheck_tcp:
+        subCategory: ""
+        description: Create a TCP connection on the target
+        name: appclacks_healthcheck_tcp
+        title: appclacks_healthcheck_tcp
+        examples:
+            - name: test_tcp
+              manifest: |-
+                {
+                  "description": "example tcp health check",
+                  "enabled": true,
+                  "interval": "30s",
+                  "labels": {
+                    "env": "prod"
+                  },
+                  "name": "test-tcp",
+                  "port": 443,
+                  "target": "appclacks.com",
+                  "timeout": "5s"
+                }
+        argumentDocs:
+            create: (String)
+            delete: (String)
+            description: (String) Health check description
+            enabled: (Boolean) Enable the health check on the Appclacks platform
+            id: (String) The ID of this resource.
+            interval: '(String) Health check interval (example: 30s)'
+            labels: (Map of String) Health check labels
+            name: (String) Health check name
+            port: (Number) Health check port
+            read: (String)
+            should_fail: (Boolean) If set to true, the health check will be considered successful if the TCP connection fails
+            target: (String) Health check target (can be a domain or an IP address)
+            timeout: '(String) Health check timeout (example: 5s)'
+            timeouts: (Block, Optional) (see below for nested schema)
+            update: (String)
+        importStatements:
+            - terraform import appclacks_healthcheck_tcp.demo b6dd6bfc-8a75-11ed-a1eb-0242ac120002
+    appclacks_healthcheck_tls:
+        subCategory: ""
+        description: Create a TLS connection on the target
+        name: appclacks_healthcheck_tls
+        title: appclacks_healthcheck_tls
+        examples:
+            - name: test_tls
+              manifest: |-
+                {
+                  "description": "example tls health check",
+                  "enabled": true,
+                  "expiration_delay": "168h",
+                  "interval": "30s",
+                  "labels": {
+                    "env": "prod"
+                  },
+                  "name": "test-tls",
+                  "port": 443,
+                  "server_name": "appclacks.com",
+                  "target": "appclacks.com",
+                  "timeout": "5s"
+                }
+        argumentDocs:
+            cacert: (String) TLS cacert file to use for the TLS connection
+            cert: (String) TLS cert file to use for the TLS connection
+            create: (String)
+            delete: (String)
+            description: (String) Health check description
+            enabled: (Boolean) Enable the health check on the Appclacks platform
+            expiration_delay: '(String) The health check will be considered failed if hte certificate expires is less than this duration (for example: 168h)'
+            id: (String) The ID of this resource.
+            insecure: (Boolean) Accept insecure TLS connections
+            interval: '(String) Health check interval (example: 30s)'
+            key: (String) TLS key file to use for the TLS connection
+            labels: (Map of String) Health check labels
+            name: (String) Health check name
+            port: (Number) Health check port
+            read: (String)
+            server_name: (String) Server name to use for the TLS connection. Mandatory if insecure is not set.
+            target: (String) Health check target (can be a domain or an IP address)
+            timeout: '(String) Health check timeout (example: 5s)'
+            timeouts: (Block, Optional) (see below for nested schema)
+            update: (String)
+        importStatements:
+            - terraform import appclacks_healthcheck_tls.demo b6dd6bfc-8a75-11ed-a1eb-0242ac120002

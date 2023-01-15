@@ -1,0 +1,19 @@
+apiVersion: healthcheck.appclacks.upbound.io/v1alpha1
+kind: Command
+metadata:
+  annotations:
+    meta.upbound.io/example-id: healthcheck/v1alpha1/command
+  labels:
+    testing.upbound.io/example-name: example_healthcheck_command
+  name: example-healthcheck-command
+spec:
+  forProvider:
+    arguments:
+      - /
+    command: ls
+    description: example command health check
+    interval: 30s
+    labels:
+      env: prod
+    name: test-command
+    timeout: 5s

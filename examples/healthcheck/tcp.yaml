@@ -1,0 +1,19 @@
+apiVersion: healthcheck.appclacks.upbound.io/v1alpha1
+kind: TCP
+metadata:
+  annotations:
+    meta.upbound.io/example-id: healthcheck/v1alpha1/tcp
+  labels:
+    testing.upbound.io/example-name: example_healthcheck_tcp
+  name: example-healthcheck-tcp
+spec:
+  forProvider:
+    description: example tcp health check
+    enabled: true
+    interval: 30s
+    labels:
+      env: prod
+    name: test-tcp
+    port: 443
+    target: appclacks.com
+    timeout: 5s
