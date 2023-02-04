@@ -559,6 +559,21 @@ func (in *HTTPParameters) DeepCopyInto(out *HTTPParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Query != nil {
+		in, out := &in.Query, &out.Query
+		*out = make(map[string]*string, len(*in))
+		for key, val := range *in {
+			var outVal *string
+			if val == nil {
+				(*out)[key] = nil
+			} else {
+				in, out := &val, &outVal
+				*out = new(string)
+				**out = **in
+			}
+			(*out)[key] = outVal
+		}
+	}
 	if in.Redirect != nil {
 		in, out := &in.Redirect, &out.Redirect
 		*out = new(bool)

@@ -8,9 +8,9 @@ export TERRAFORM_VERSION := 1.3.6
 
 export TERRAFORM_PROVIDER_SOURCE := appclacks/appclacks
 export TERRAFORM_PROVIDER_REPO := https://github.com/appclacks/terraform-provider-appclacks
-export TERRAFORM_PROVIDER_VERSION := 0.3.0
+export TERRAFORM_PROVIDER_VERSION := 0.4.0
 export TERRAFORM_PROVIDER_DOWNLOAD_NAME := terraform-provider-appclacks
-export TERRAFORM_NATIVE_PROVIDER_BINARY := terraform-provider-appclacks_v0.3.0_x5
+export TERRAFORM_NATIVE_PROVIDER_BINARY := terraform-provider-appclacks_v0.4.0_x5
 export TERRAFORM_DOCS_PATH := docs/resources
 
 PLATFORMS ?= linux_amd64 linux_arm64
@@ -118,7 +118,7 @@ $(TERRAFORM_PROVIDER_SCHEMA): $(TERRAFORM)
 
 pull-docs:
 	@if [ ! -d "$(WORK_DIR)/$(TERRAFORM_PROVIDER_SOURCE)" ]; then \
-  		mkdir -p "$(WORK_DIR)/$(TERRAFORM_PROVIDER_SOURCE)" && \
+		mkdir -p "$(WORK_DIR)/$(TERRAFORM_PROVIDER_SOURCE)" && \
 		git clone -c advice.detachedHead=false --depth 1 --filter=blob:none --branch "v$(TERRAFORM_PROVIDER_VERSION)" --sparse "$(TERRAFORM_PROVIDER_REPO)" "$(WORK_DIR)/$(TERRAFORM_PROVIDER_SOURCE)"; \
 	fi
 	@git -C "$(WORK_DIR)/$(TERRAFORM_PROVIDER_SOURCE)" sparse-checkout set "$(TERRAFORM_DOCS_PATH)"

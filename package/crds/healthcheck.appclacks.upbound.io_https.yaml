@@ -128,6 +128,12 @@ spec:
                     description: (String) Health check protocol to use (http or https)
                       Health check protocol to use (http or https)
                     type: string
+                  query:
+                    additionalProperties:
+                      type: string
+                    description: (Map of String) Health check request HTTP query parameters
+                      Health check request HTTP query parameters
+                    type: object
                   redirect:
                     description: (Boolean) Follow redirections Follow redirections
                     type: boolean
