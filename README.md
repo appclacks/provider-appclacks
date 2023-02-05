@@ -1,60 +1,35 @@
 # Provider Appclacks
 
+<div align="center">
+
+![CI](https://github.com/appclacks/provider-appclacks/actions/workflows/ci.yml/badge.svg) [![GitHub release](https://img.shields.io/github/release/appclacks/provider-appclacks/all.svg?style=flat-square)](https://github.com/appclacks/provider-appclacks/releases)
+
+</div>
+
 `provider-appclacks` is a [Crossplane](https://crossplane.io/) provider that
 is built using [Upjet](https://github.com/upbound/upjet) code
-generation tools and exposes XRM-conformant managed resources for the
-Appclacks API.
+generation tools and exposes XRM-conformant managed resources for
+[Appclacks](https://appclacks.com/).
+
+Appclacks is a universal health check solution.
 
 ## Getting Started
 
-Install the provider by using the following command after changing the image tag
-to the [latest release](https://marketplace.upbound.io/providers/azrod/provider-appclacks):
-```
-up ctp provider install appclacks/provider-appclacks:v0.1.0
-```
+To start using this provider, follow the [Configuration Guide](docs/Configuration.md).
 
-Alternatively, you can use declarative installation:
-```
-cat <<EOF | kubectl apply -f -
-apiVersion: pkg.crossplane.io/v1
-kind: Provider
-metadata:
-  name: provider-appclacks
-spec:
-  package: appclacks/provider-appclacks:v0.1.0
-EOF
-```
+You can find a detailed API reference with all CRDs [here](https://doc.crds.dev/github.com/appclacks/provider-appclacks).
 
-Notice that in this example Provider resource is referencing ControllerConfig with debug enabled.
+## Contributing
 
-You can see the API reference [here](https://doc.crds.dev/github.com/azrod/provider-appclacks).
+For the general contribution guide, see [Contribution Guide](CONTRIBUTING.md)
 
-## Developing
+If you'd like to learn how to use Upjet, see [Usage Guide](https://github.com/upbound/upjet/tree/main/docs).
 
-Run code-generation pipeline:
-```console
-go run cmd/generator/main.go "$PWD"
-```
+### Add a New Resource
 
-Run against a Kubernetes cluster:
-
-```console
-make run
-```
-
-Build, push, and install:
-
-```console
-make all
-```
-
-Build binary:
-
-```console
-make build
-```
+Follow the guide [here](https://github.com/upbound/upjet/blob/main/docs/add-new-resource-short.md).
 
 ## Report a Bug
 
 For filing bugs, suggesting improvements, or requesting new features, please
-open an [issue](https://github.com/azrod/provider-appclacks/issues).
+open an [issue](https://github.com/appclacks/provider-appclacks/issues).
