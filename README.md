@@ -10,7 +10,7 @@ Appclacks API.
 Install the provider by using the following command after changing the image tag
 to the [latest release](https://marketplace.upbound.io/providers/azrod/provider-appclacks):
 ```
-up ctp provider install azrod/provider-appclacks:v0.1.0
+up ctp provider install appclacks/provider-appclacks:v0.1.0
 ```
 
 Alternatively, you can use declarative installation:
@@ -21,7 +21,7 @@ kind: Provider
 metadata:
   name: provider-appclacks
 spec:
-  package: azrod/provider-appclacks:v0.1.0
+  package: appclacks/provider-appclacks:v0.1.0
 EOF
 ```
 

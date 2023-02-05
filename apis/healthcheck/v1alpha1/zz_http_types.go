@@ -96,6 +96,11 @@ type HTTPParameters struct {
 	// +kubebuilder:validation:Optional
 	Protocol *string `json:"protocol,omitempty" tf:"protocol,omitempty"`
 
+	// (Map of String) Health check request HTTP query parameters
+	// Health check request HTTP query parameters
+	// +kubebuilder:validation:Optional
+	Query map[string]*string `json:"query,omitempty" tf:"query,omitempty"`
+
 	// (Boolean) Follow redirections
 	// Follow redirections
 	// +kubebuilder:validation:Optional
