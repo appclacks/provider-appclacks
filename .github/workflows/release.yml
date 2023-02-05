@@ -20,7 +20,7 @@ jobs:
   release_please:
     name: Release Please
     runs-on: ubuntu-22.04
-    if: github.repository == 'FrangipaneTeam/provider-flexibleengine'
+    if: github.repository == 'appclacks/provider-appclacks'
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
       tag_name: ${{ steps.release.outputs.tag_name }}
