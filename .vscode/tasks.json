@@ -1,0 +1,37 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Bean bin",
+            "type": "shell",
+            "command": "make bean"
+        },
+        {
+            "label": "Reviewable",
+            "type": "shell",
+            "command": "make -j 6 reviewable"
+        },
+        {
+            "label": "Generate",
+            "type": "shell",
+            "command": "make -j 6 generate"
+        },
+        {
+            "label": "Lint",
+            "type": "shell",
+            "command": "make -j 6 lint"
+        },
+        {
+            "label": "Run",
+            "type": "shell",
+            "command": "make -j 2 run"
+        },
+        {
+            "label": "Apply Crds",
+            "type": "shell",
+            "command": "kubectl apply -f package/crds"
+        }
+    ]
+}
