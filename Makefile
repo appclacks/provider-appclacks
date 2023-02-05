@@ -2,7 +2,7 @@
 # Setup Project
 
 PROJECT_NAME := provider-appclacks
-PROJECT_REPO := github.com/azrod/$(PROJECT_NAME)
+PROJECT_REPO := github.com/appclacks/$(PROJECT_NAME)
 
 export TERRAFORM_VERSION := 1.3.6
 

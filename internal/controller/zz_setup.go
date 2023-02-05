@@ -9,12 +9,12 @@ import (
 
 	"github.com/upbound/upjet/pkg/controller"
 
-	command "github.com/azrod/provider-appclacks/internal/controller/healthcheck/command"
-	dns "github.com/azrod/provider-appclacks/internal/controller/healthcheck/dns"
-	http "github.com/azrod/provider-appclacks/internal/controller/healthcheck/http"
-	tcp "github.com/azrod/provider-appclacks/internal/controller/healthcheck/tcp"
-	tls "github.com/azrod/provider-appclacks/internal/controller/healthcheck/tls"
-	providerconfig "github.com/azrod/provider-appclacks/internal/controller/providerconfig"
+	command "github.com/appclacks/provider-appclacks/internal/controller/healthcheck/command"
+	dns "github.com/appclacks/provider-appclacks/internal/controller/healthcheck/dns"
+	http "github.com/appclacks/provider-appclacks/internal/controller/healthcheck/http"
+	tcp "github.com/appclacks/provider-appclacks/internal/controller/healthcheck/tcp"
+	tls "github.com/appclacks/provider-appclacks/internal/controller/healthcheck/tls"
+	providerconfig "github.com/appclacks/provider-appclacks/internal/controller/providerconfig"
 )
 
 // Setup creates all controllers with the supplied logger and adds them to

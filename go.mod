@@ -1,4 +1,4 @@
-module github.com/azrod/provider-appclacks
+module github.com/appclacks/provider-appclacks
 
 go 1.19
 

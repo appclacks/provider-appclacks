@@ -3,4 +3,4 @@ kind: Provider
 metadata:
   name: provider-appclacks
 spec:
-  package: azrod/provider-appclacks:v0.1.0
+  package: appclacks/provider-appclacks:v0.1.0

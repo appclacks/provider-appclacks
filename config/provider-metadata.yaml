@@ -93,9 +93,6 @@ resources:
                   "path": "/healthz",
                   "port": 443,
                   "protocol": "https",
-                  "query": {
-                    "param1": "value"
-                  },
                   "target": "api.appclacks.com",
                   "timeout": "5s",
                   "valid_status": [
@@ -121,7 +118,6 @@ resources:
             path: (String) Health check request HTTP path
             port: (Number) Health check port
             protocol: (String) Health check protocol to use (http or https)
-            query: (Map of String) Health check request HTTP query parameters
             read: (String)
             redirect: (Boolean) Follow redirections
             target: (String) Health check target (can be a domain or an IP address)
