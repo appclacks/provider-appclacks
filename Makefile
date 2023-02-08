@@ -206,3 +206,36 @@ up.login:
 	@$(INFO) logging into up
 	@$(UP) login
 	@$(OK) logging into up
+
+# ====================================================================================
+
+define BEAN_MAKE_HELP
+Bean Targets:
+    bean                  Run bean commands.
+    bean.install          Install or update bean bin.
+
+endef
+
+bean.help:
+	@echo "$$BEAN_MAKE_HELP"
+
+# bean check if bean is installed
+bean.exist:
+	@$(INFO) checking if bean is installed
+	@bean help > /dev/null 2>&1 || $(FAIL)
+	@$(OK) checking if bean is installed
+
+# bean install
+bean.install:
+	@$(INFO) installing bean bin
+	@$(GO) install github.com/FrangipaneTeam/bean@latest
+	@$(OK) installing bean bin
+
+bean: bean.exist
+	@bean || $(FAIL)
+
+export BEAN_MAKE_HELP
+
+help-special: crossplane.help bean.help
+
+.PHONY: crossplane.help bean.help help-special
