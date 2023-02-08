@@ -8,13 +8,13 @@ import (
 	// Note(turkenh): we are importing this to embed provider schema document
 	_ "embed"
 
-	"github.com/azrod/provider-appclacks/config/healthcheck"
+	"github.com/appclacks/provider-appclacks/config/healthcheck"
 	ujconfig "github.com/upbound/upjet/pkg/config"
 )
 
 const (
 	resourcePrefix = "appclacks"
-	modulePath     = "github.com/azrod/provider-appclacks"
+	modulePath     = "github.com/appclacks/provider-appclacks"
 )
 
 //go:embed schema.json

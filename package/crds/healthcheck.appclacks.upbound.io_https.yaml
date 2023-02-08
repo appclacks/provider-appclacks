@@ -131,8 +131,7 @@ spec:
                   query:
                     additionalProperties:
                       type: string
-                    description: (Map of String) Health check request HTTP query parameters
-                      Health check request HTTP query parameters
+                    description: Health check request HTTP query parameters
                     type: object
                   redirect:
                     description: (Boolean) Follow redirections Follow redirections

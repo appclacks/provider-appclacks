@@ -11,7 +11,7 @@ import (
 
 	"github.com/upbound/upjet/pkg/pipeline"
 
-	"github.com/azrod/provider-appclacks/config"
+	"github.com/appclacks/provider-appclacks/config"
 )
 
 func main() {

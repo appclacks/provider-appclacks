@@ -24,12 +24,12 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	"github.com/azrod/provider-appclacks/apis"
-	"github.com/azrod/provider-appclacks/apis/v1alpha1"
-	"github.com/azrod/provider-appclacks/config"
-	"github.com/azrod/provider-appclacks/internal/clients"
-	"github.com/azrod/provider-appclacks/internal/controller"
-	"github.com/azrod/provider-appclacks/internal/features"
+	"github.com/appclacks/provider-appclacks/apis"
+	"github.com/appclacks/provider-appclacks/apis/v1alpha1"
+	"github.com/appclacks/provider-appclacks/config"
+	"github.com/appclacks/provider-appclacks/internal/clients"
+	"github.com/appclacks/provider-appclacks/internal/controller"
+	"github.com/appclacks/provider-appclacks/internal/features"
 )
 
 func main() {

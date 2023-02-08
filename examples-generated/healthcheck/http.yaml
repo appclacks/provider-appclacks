@@ -18,8 +18,6 @@ spec:
     path: /healthz
     port: 443
     protocol: https
-    query:
-      param1: value
     target: api.appclacks.com
     timeout: 5s
     validStatus:
